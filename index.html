@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Semester 3 Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-gray-900 text-white p-6">
+  <div class="max-w-7xl mx-auto">
+    <!-- Header Filters -->
+    <div class="flex flex-wrap gap-4 mb-6">
+      <select class="bg-gray-800 text-white px-4 py-2 rounded">
+        <option>CSE</option>
+      </select>
+      <select class="bg-gray-800 text-white px-4 py-2 rounded">
+        <option>Year 2</option>
+      </select>
+      <select id="semesterSelect" class="bg-gray-800 text-white px-4 py-2 rounded" onchange="updateSubjects()">
+        <option value="3">Semester 3</option>
+        <option value="4">Semester 4</option>
+      </select>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="flex space-x-4 mb-8">
+      <button class="bg-purple-600 px-6 py-3 rounded text-white font-semibold">My Progress</button>
+      <button class="bg-blue-600 px-6 py-3 rounded text-white font-semibold">My Exams</button>
+      <button class="bg-orange-600 px-6 py-3 rounded text-white font-semibold">Performance</button>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Left Panel -->
+      <div class="bg-gray-800 p-4 rounded">
+        <h2 class="text-xl font-bold mb-4" id="subjectHeading">CSE Year 2 Semester 3 Subjects</h2>
+        <ul class="space-y-2" id="subjectList"></ul>
+      </div>
+
+      <!-- Right Panel (Subject Content) -->
+      <div class="bg-gray-800 p-4 rounded">
+        <div id="subjectContents"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Completion Popup -->
+  <div id="completionPopup" class="fixed bottom-10 right-10 bg-green-600 text-white px-6 py-4 rounded-lg shadow-lg opacity-0 transition-opacity duration-500 ease-in-out z-50">
+    🎉 Yayyy! Chapter Completed
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
