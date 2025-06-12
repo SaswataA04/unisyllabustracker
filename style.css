@@ -1,0 +1,6 @@
+.subject-content {
+  display: none;
+}
+.subject-content.active {
+  display: block;
+}
